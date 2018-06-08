@@ -1,5 +1,5 @@
 station_cfg={}
-station_cfg.ssid="Test"
+station_cfg.ssid="boy"
 station_cfg.pwd="youdiansao"
 
 wifi.setmode(wifi.STATION)
