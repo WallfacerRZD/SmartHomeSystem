@@ -14,13 +14,5 @@ public class JavaCVTest {
         CanvasFrame canvas = new CanvasFrame("摄像头");
         canvas.setAlwaysOnTop(true);
 
-        while (true) {
-            if (!canvas.isDisplayable()) {
-                grabber.stop();
-                System.exit(1);
-            }
-            canvas.showImage(grabber.grab());
-            Thread.sleep(50);
-        }
     }
 }
