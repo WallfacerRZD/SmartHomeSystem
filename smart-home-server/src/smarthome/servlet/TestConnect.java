@@ -1,5 +1,6 @@
 package smarthome.servlet;
 
+
 import net.sf.json.JSONObject;
 import smarthome.Command;
 import smarthome.appliance.Camera;

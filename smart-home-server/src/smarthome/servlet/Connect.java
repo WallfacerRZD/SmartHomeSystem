@@ -1,5 +1,6 @@
 package smarthome.servlet;
 
+
 import net.sf.json.JSONObject;
 import smarthome.appliance.Camera;
 import smarthome.appliance.Light;
@@ -70,6 +71,6 @@ public class Connect extends HttpServlet {
 		// ·µ»Ø
 		JSONObject json = new JSONObject();
 		json.put("state", state);
-		response.getWriter().print(json);
+        response.getWriter().print(json);
 	}
 }
