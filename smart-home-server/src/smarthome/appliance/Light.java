@@ -1,7 +1,9 @@
 package smarthome.appliance;
 
+import java.awt.event.InputEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -27,10 +29,12 @@ public class Light {
 
     private void request(final String url) {
         HttpURLConnection connection = null;
+        InputStream inputStream = null;
         try {
             connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
-            BufferedReader bf = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            inputStream = connection.getInputStream();
+            BufferedReader bf = new BufferedReader(new InputStreamReader(inputStream));
             String line;
             while ((line = bf.readLine()) != null) {
                 System.out.println(line);
@@ -40,6 +44,14 @@ public class Light {
         } finally {
             if (connection != null) {
                 connection.disconnect();
+            }
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
         }
     }
