@@ -1,6 +1,5 @@
 package smarthome.appliance;
 
-import java.awt.event.InputEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,8 +22,8 @@ public class Light {
     }
 
     public static void main(String[] args) throws MalformedURLException {
-        new Light().on();
-        new Light().off();
+        // new Light().on();
+        new  Light().off();
     }
 
     private void request(final String url) {
