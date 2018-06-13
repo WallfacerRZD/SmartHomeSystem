@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.smarthomeui.ConditionerActivity">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/conditioner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.user.smarthomeui.ConditionerActivity">
+
+    </RelativeLayout>
+    <RelativeLayout
+        style="@style/h_wrap_content"
+        android:layout_gravity="top"
+        app:layout_heightPercent="50%">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/conditioner_icon"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/h_wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_heightPercent="50%">
+
+
+        <SeekBar
+            android:id="@+id/conditioner_seekBar"
+            style="@android:style/Widget.Material.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="4"
+            android:progress="1"
+            android:progressTint="@color/cornflowerblue"
+            android:thumbTint="@color/steelblue"
+            android:layout_below="@+id/cool_textview"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="22dp"/>
+
+        <Switch
+            android:id="@+id/conditioner_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开关"
+            android:thumbTint="@color/cornflowerblue"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"/>
+
+        <ImageButton
+            style="@style/tv_style"
+            android:id="@+id/warm_textview"
+            android:src="@drawable/warm_icon"
+            android:background="@drawable/selector"
+            android:clickable="true"
+            android:layout_width="58dp"
+            android:layout_height="48dp"
+            android:layout_above="@+id/conditioner_seekBar"
+            android:layout_toRightOf="@+id/cool_textview"
+            android:layout_toEndOf="@+id/cool_textview"
+            android:layout_marginLeft="22dp"
+            android:layout_marginStart="22dp"/>
+
+        <ImageButton
+            style="@style/tv_style"
+            android:id="@+id/cool_textview"
+            android:src="@drawable/cool_icon"
+            android:background="@drawable/selector"
+            android:clickable="true"
+            android:layout_width="58dp"
+            android:layout_height="48dp"
+            android:layout_alignTop="@+id/wet_textview"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageButton
+            style="@style/tv_style"
+            android:id="@+id/wet_textview"
+            android:src="@drawable/wet_icon"
+            android:background="@drawable/selector"
+            android:clickable="true"
+            android:layout_width="58dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="49dp"
+            android:layout_below="@+id/conditioner_switch"
+            android:layout_toLeftOf="@+id/cool_textview"
+            android:layout_toStartOf="@+id/cool_textview"/>
+    </RelativeLayout>
+
+</android.support.percent.PercentFrameLayout>
+

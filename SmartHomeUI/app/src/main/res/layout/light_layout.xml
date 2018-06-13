@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.smarthomeui.LightActivity">
+
+    <RelativeLayout
+        style="@style/h_wrap_content"
+        android:layout_gravity="top"
+        app:layout_heightPercent="50%">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/light"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/h_wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_heightPercent="50%">
+
+
+        <SeekBar
+            android:id="@+id/light_seekBar"
+            style="@android:style/Widget.Material.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:max="4"
+            android:progress="1"
+            android:progressTint="@color/cornflowerblue"
+            android:thumbTint="@color/steelblue" />
+
+        <Switch
+            android:id="@+id/light_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="67dp"
+            android:layout_marginStart="67dp"
+            android:text="开关"
+            android:thumbTint="@color/cornflowerblue"
+            android:layout_alignTop="@+id/set_time_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/set_time_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="49dp"
+            android:layout_marginRight="49dp"
+            android:background="@color/cornflowerblue"
+            android:text="定时"
+            android:layout_above="@+id/light_seekBar"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="19dp" />
+    </RelativeLayout>
+
+</android.support.percent.PercentFrameLayout>
