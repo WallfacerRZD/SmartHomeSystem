@@ -6,9 +6,11 @@ package com.example.user.smarthomeui;
 
 public class Appliances {
     private String name;
+
     public Appliances(String name) {
         this.name = name;
     }
+
     public String getName() {
         return name;
     }

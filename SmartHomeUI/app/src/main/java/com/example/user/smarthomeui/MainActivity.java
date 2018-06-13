@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+
     private static boolean isExit = false;
 
     @Override
@@ -43,14 +44,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         history_view.setOnClickListener(this);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build( );
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     ;
 
     @Override
     public void onClick(View v) {
-        switch (v.getId( )) {
+        switch (v.getId()) {
             case R.id.check_textview:
                 Intent check_intent = new Intent(MainActivity.this, CheckActivity.class);
                 startActivity(check_intent);
@@ -72,25 +73,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater( ).inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId( )) {
+        switch (item.getItemId()) {
             case R.id.setting1:
-                Toast.makeText(this, "还没有做声音设置 打我啊", Toast.LENGTH_SHORT).show( );
+                Toast.makeText(this, "还没有做声音设置 打我啊", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.setting2:
-                Toast.makeText(this, "还没有做背景设置 打我啊", Toast.LENGTH_SHORT).show( );
+                Toast.makeText(this, "还没有做背景设置 打我啊", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.info_item:
                 Intent info_intent = new Intent(MainActivity.this, InfoActivity.class);
                 startActivity(info_intent);
                 break;
             case R.id.quit_item:
-                Toast.makeText(this, "再见吧 朋友", Toast.LENGTH_SHORT).show( );
+                Toast.makeText(this, "再见吧 朋友", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
             default:
@@ -104,35 +105,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     public Action getIndexApiAction() {
-        Thing object = new Thing.Builder( )
+        Thing object = new Thing.Builder()
                 .setName("Main Page") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.
                 .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build( );
+                .build();
         return new Action.Builder(Action.TYPE_VIEW)
                 .setObject(object)
                 .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build( );
+                .build();
     }
 
     @Override
     public void onStart() {
-        super.onStart( );
+        super.onStart();
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect( );
-        AppIndex.AppIndexApi.start(client, getIndexApiAction( ));
+        client.connect();
+        AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
 
     @Override
     public void onStop() {
-        super.onStop( );
+        super.onStop();
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction( ));
-        client.disconnect( );
+        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+        client.disconnect();
     }
 
     Handler mHandler = new Handler() {

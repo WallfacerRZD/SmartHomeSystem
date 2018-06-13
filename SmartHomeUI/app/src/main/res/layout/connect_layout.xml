@@ -11,15 +11,20 @@
     tools:context="com.example.user.smarthomeui.ConnectActivity">
 
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="未发现新设备"
-            android:textSize="18sp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"/>
-
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="ip"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_marginTop="92dp"
+                android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+        <Button
+                android:text="连接"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_below="@+id/editText"
+                android:layout_centerHorizontal="true" android:layout_marginTop="44dp" android:id="@+id/button"/>
 
 
 </RelativeLayout>

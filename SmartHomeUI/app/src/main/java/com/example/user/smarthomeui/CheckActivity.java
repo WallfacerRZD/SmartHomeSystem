@@ -13,9 +13,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheckActivity extends AppCompatActivity implements View.OnClickListener{
+public class CheckActivity extends AppCompatActivity implements View.OnClickListener {
 
     private List<Appliances> appliancesList = new ArrayList<Appliances>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,30 +27,30 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
         listView.setAdapter(adapter);
         TextView check_view = (TextView) findViewById(R.id.new_appliance_textview);
         check_view.setOnClickListener(this);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Appliances appliances = appliancesList.get(position);
-                Toast.makeText(CheckActivity.this, appliances.getName()+"连接中......", Toast.LENGTH_SHORT).show();
-                switch (appliances.getName()){
+                Toast.makeText(CheckActivity.this, appliances.getName() + "连接中......", Toast.LENGTH_SHORT).show();
+                switch (appliances.getName()) {
                     case "台灯":
-                        Intent light_intent = new Intent(CheckActivity.this,LightActivity.class);
+                        Intent light_intent = new Intent(CheckActivity.this, LightActivity.class);
                         startActivity(light_intent);
                         break;
                     case "空调":
-                        Intent conditioner_intent = new Intent(CheckActivity.this,ConditionerActivity.class);
+                        Intent conditioner_intent = new Intent(CheckActivity.this, ConditionerActivity.class);
                         startActivity(conditioner_intent);
                         break;
                     case "风扇":
-                        Intent warning_intent = new Intent(CheckActivity.this,WarningActivity.class);
+                        Intent warning_intent = new Intent(CheckActivity.this, WarningActivity.class);
                         startActivity(warning_intent);
                         break;
                     case "监控":
-                        Intent monitor_intent = new Intent(CheckActivity.this,MonitorActivity.class);
+                        Intent monitor_intent = new Intent(CheckActivity.this, MonitorActivity.class);
                         startActivity(monitor_intent);
                         break;
                     case "麦克风":
-                        Intent microphone_intent = new Intent(CheckActivity.this,MicrophoneActivity.class);
+                        Intent microphone_intent = new Intent(CheckActivity.this, MicrophoneActivity.class);
                         startActivity(microphone_intent);
                         break;
                 }
@@ -58,6 +59,7 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
+
     private void initAppliances() {
         Appliances light = new Appliances("台灯");
         appliancesList.add(light);
@@ -70,8 +72,10 @@ public class CheckActivity extends AppCompatActivity implements View.OnClickList
         Appliances speaker = new Appliances("麦克风");
         appliancesList.add(speaker);
     }
+
+    @Override
     public void onClick(View v) {
-        Intent connect_intent = new Intent(CheckActivity.this,ConnectActivity.class);
+        Intent connect_intent = new Intent(CheckActivity.this, ConnectActivity.class);
         startActivity(connect_intent);
     }
 }

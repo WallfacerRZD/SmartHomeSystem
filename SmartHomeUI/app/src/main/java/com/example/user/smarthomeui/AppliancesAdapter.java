@@ -16,10 +16,12 @@ import java.util.List;
 
 public class AppliancesAdapter extends ArrayAdapter<Appliances> {
     private int resourceId;
-    public AppliancesAdapter(Context context, int textViewResourceId, List<Appliances> objects) {
+
+    public AppliancesAdapter(CheckActivity context, int textViewResourceId, List<Appliances> objects) {
         super(context, textViewResourceId, textViewResourceId, objects);
         resourceId = textViewResourceId;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Appliances appliances = getItem(position);
@@ -28,7 +30,7 @@ public class AppliancesAdapter extends ArrayAdapter<Appliances> {
         if (convertView == null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
             viewHolder = new ViewHolder();
-            viewHolder.appliancesName = (TextView) view.findViewById (R.id.appliances_name);
+            viewHolder.appliancesName = (TextView) view.findViewById(R.id.appliances_name);
             view.setTag(viewHolder); // 将ViewHolder存储在View中
         } else {
             view = convertView;

@@ -8,12 +8,13 @@ import android.widget.Button;
 
 public class WarningActivity extends AppCompatActivity {
     private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.warning_layout);
 
-        button = (Button)findViewById(R.id.buttonyes);
+        button = (Button) findViewById(R.id.buttonyes);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

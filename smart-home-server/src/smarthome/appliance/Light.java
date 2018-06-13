@@ -22,7 +22,7 @@ public class Light {
     }
 
     public static void main(String[] args) throws MalformedURLException {
-        // new Light().on();
+        new Light().on();
         new  Light().off();
     }
 
